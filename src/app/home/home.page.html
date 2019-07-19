@@ -1,0 +1,93 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Weather App
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br/> 
+  <ion-searchbar placeholder="Search.." (click)="submit(city)" name="search" [(ngModel)]="city"></ion-searchbar>
+<br/>
+
+<!-- <div style ="width: 300px; overflow-x:scroll"> -->
+<div style="width: 100%; height: 100%; overflow-block: scroll;">
+<h4>{{list?.city.name}}</h4>
+<h5>{{list?.list[0].dt_txt | date: 'EEEE'}} , {{list?.list[0].weather[0].description}}</h5>
+<h5>{{list?.list[0].main.temp|number:'1.0-0'}}&#8451;</h5> 
+  <img src='http://openweathermap.org/img/w/{{list?.list[0].weather[0].icon}}.png' style="width:200px; margin-top: -15%" >
+  
+
+  <h6><ion-label>Humidity:{{list?.list[0].main.humidity}} &#37;</ion-label>&nbsp;&nbsp;|&nbsp;
+    <ion-label>Wind Speed:{{list?.list[0].wind.speed}} km/h</ion-label>
+    </h6>
+<br/>
+<br/>
+<table style="width:100%;" >
+    
+  <tr>
+    
+    
+    
+   
+    
+  </tr>
+<!-- <tr>
+  <td>{{list?.list[8].dt_txt | date: 'EEE'}}</td>
+</tr>-->
+<!-- <tr>
+    <td><ion-label><img src='http://openweathermap.org/img/w/{{list?.list[0].weather[0].icon}}.png' ></ion-label></td>
+  </tr>
+  <tr>
+     <td><ion-label> {{list?.list[8].main.temp_max|number:'1.0-0'}}&#8451;</ion-label></td>
+    </tr>
+    <tr>
+        <td><ion-label> {{list?.list[8].weather[0].description}}</ion-label></td>
+       </tr>  -->
+
+
+  <tr>
+      <th>{{list?.list[8].dt_txt | date: 'EEE'}}</th>   
+          <td> <ion-label><img src='http://openweathermap.org/img/w/{{list?.list[0].weather[0].icon}}.png' ></ion-label></td>
+        <td><ion-label> {{list?.list[8].main.temp_max|number:'1.0-0'}}&#8451;</ion-label></td>
+        <td><ion-label> {{list?.list[8].weather[0].description}}</ion-label></td>
+ 
+ </tr>
+ <tr>
+    <th>{{list?.list[16].dt_txt | date: 'EEE'}}</th>
+        
+            <td> <ion-label><img src='http://openweathermap.org/img/w/{{list?.list[8].weather[0].icon}}.png' ></ion-label></td>
+            <td> <ion-label>{{list?.list[16].main.temp_max|number:'1.0-0'}}&#8451;</ion-label></td>
+            <td> <ion-label>{{list?.list[16].weather[0].description}}</ion-label></td>
+   
+  </tr>
+  <tr>
+      <th>{{list?.list[24].dt_txt | date: 'EEE'}}</th>
+        
+            <td><ion-label><img src='http://openweathermap.org/img/w/{{list?.list[16].weather[0].icon}}.png' ></ion-label></td>
+            <td><ion-label> {{list?.list[24].main.temp_max|number:'1.0-0'}}&#8451;</ion-label></td>
+            <td><ion-label> {{list?.list[24].weather[0].description}}</ion-label></td>
+      
+    </tr>
+      <tr>
+         <th>{{list?.list[32].dt_txt | date: 'EEE'}}</th>
+            <td><ion-label><img src='http://openweathermap.org/img/w/{{list?.list[24].weather[0].icon}}.png'  ></ion-label></td>
+            <td> <ion-label> {{list?.list[32].main.temp_max|number:'1.0-0'}}&#8451;</ion-label></td>
+            <td><ion-label> {{list?.list[32].weather[0].description}}</ion-label></td>
+        
+      </tr>
+        <tr>
+            <th>{{list?.list[39].dt_txt | date: 'EEE'}}</th>
+            
+                <td><ion-label><img src='http://openweathermap.org/img/w/{{list?.list[32].weather[0].icon}}.png' ></ion-label></td>
+                <td><ion-label> {{list?.list[39].main.temp_max|number:'1.0-0'}}&#8451;</ion-label></td>
+                <td><ion-label> {{list?.list[39].weather[0].description}}</ion-label></td>
+            
+      </tr> 
+      
+  </table>
+<!-- </div> -->
+</div>
+</ion-content>
+
